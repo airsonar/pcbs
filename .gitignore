@@ -1,0 +1,6 @@
+# SPDX-FileCopyrightText: AirSonar contributors
+# SPDX-License-Identifier: CC0-1.0
+
+# Artifacts from building the documentation.
+site/
+__pycache__/
