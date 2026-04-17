@@ -4,3 +4,6 @@
 # Artifacts from building the documentation.
 site/
 __pycache__/
+
+# KiCad backup files.
+*.bak

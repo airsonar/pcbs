@@ -1,0 +1,156 @@
+(footprint "Amphenol_75867-130LF"
+	(version 20240108)
+	(generator "pcbnew")
+	(generator_version "8.0")
+	(layer "F.Cu")
+	(descr "Connector Header Through Hole, Right Angle 4 position 0.100\" (2.54mm)")
+	(property "Reference" "REF**"
+		(at 1.1 -4.2 -90)
+		(unlocked yes)
+		(layer "F.SilkS")
+		(uuid "d71d31f4-b4bc-4bec-b55b-c2f354bf97b1")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Value" "Amphenol_75867-130LF"
+		(at 0.2 5.7 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(uuid "b1e8c556-8c66-48b0-b9c8-30db7904112d")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Footprint" ""
+		(at 0 0 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "bd82fe53-f3e0-4faf-ab51-b364b459d0ae")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Datasheet" "https://cdn.amphenol-cs.com/media/wysiwyg/files/documentation/datasheet/boardwiretoboard/bwb_quickie.pdf"
+		(at -0.2 3.7 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "c122ff8c-b6f1-498d-a60d-d8bda7e0f2eb")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Description" ""
+		(at 0 0 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "ff79cc37-ca25-4b37-8e45-ca54a9420ce8")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(attr through_hole)
+	(fp_line
+		(start 2.9 -6.145)
+		(end 2.9 6.145)
+		(stroke
+			(width 0.2)
+			(type default)
+		)
+		(layer "F.SilkS")
+		(uuid "eeab9dc2-648a-49c0-ac89-72e5407c0c7f")
+	)
+	(fp_line
+		(start 2.9 6.145)
+		(end 12.3 6.145)
+		(stroke
+			(width 0.2)
+			(type default)
+		)
+		(layer "F.SilkS")
+		(uuid "2d1b08e5-a7f3-436e-a613-4261ec7d319f")
+	)
+	(fp_line
+		(start 12.3 -6.145)
+		(end 2.9 -6.145)
+		(stroke
+			(width 0.2)
+			(type default)
+		)
+		(layer "F.SilkS")
+		(uuid "b7a8a0c7-68aa-4533-909c-ea88d0ca2de1")
+	)
+	(fp_line
+		(start 12.3 6.145)
+		(end 12.3 -6.1435)
+		(stroke
+			(width 0.2)
+			(type default)
+		)
+		(layer "F.SilkS")
+		(uuid "1bd33f5f-4ed1-4137-96a1-37f77db6d4de")
+	)
+	(fp_text user "${REFERENCE}"
+		(at 0 7.3 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(uuid "5560a184-9eb2-415d-bb0d-9e7c42be1462")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(pad "1" thru_hole rect
+		(at -1.27 -1.27)
+		(size 1.7 1.7)
+		(drill 1)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(thermal_bridge_angle 45)
+		(uuid "273912ce-2043-4123-ad00-50b267d0e814")
+	)
+	(pad "2" thru_hole circle
+		(at 1.27 -1.27)
+		(size 1.7 1.7)
+		(drill 1)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(uuid "a0d5df49-adf6-49b5-b9ab-311ef6e4b955")
+	)
+	(pad "3" thru_hole circle
+		(at -1.27 1.27)
+		(size 1.7 1.7)
+		(drill 1)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(uuid "243cfde4-06ae-4f53-b0e1-a6dcf9b1a014")
+	)
+	(pad "4" thru_hole circle
+		(at 1.27 1.27)
+		(size 1.7 1.7)
+		(drill 1)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(uuid "33f6412d-a1eb-4dba-8eb5-34e5107fc8c6")
+	)
+)

@@ -1,0 +1,208 @@
+(footprint "Amphenol_75869-130LF"
+	(version 20240108)
+	(generator "pcbnew")
+	(generator_version "8.0")
+	(layer "F.Cu")
+	(descr "Connector Header Through Hole 4 position 0.100\" (2.54mm)")
+	(property "Reference" "REF**"
+		(at -4.2 5.8 0)
+		(unlocked yes)
+		(layer "F.SilkS")
+		(uuid "b2669ab4-1381-4b7b-9e0c-7be95a7b96b5")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Value" "Amphenol_75869-130LF"
+		(at 0 9.3 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(uuid "29df9a25-3497-4304-a642-014006efcd9e")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Footprint" ""
+		(at 0 0 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "b6110ef3-68ab-4a15-8516-d9491ef6a472")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Datasheet" "https://cdn.amphenol-cs.com/media/wysiwyg/files/documentation/datasheet/boardwiretoboard/bwb_quickie.pdf"
+		(at 0 13.2 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "b4767be8-5319-4788-b9aa-271ec7d617f9")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Description" ""
+		(at 0 0 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "be19131e-9a3f-475e-beb0-e37bc866837b")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(attr through_hole)
+	(fp_line
+		(start -6.145 -4.775)
+		(end -6.145 4.775)
+		(stroke
+			(width 0.2)
+			(type default)
+		)
+		(layer "F.SilkS")
+		(uuid "a502622b-fbde-41fd-99d7-2037367f3cb5")
+	)
+	(fp_line
+		(start -6.145 -4.775)
+		(end 6.145 -4.775)
+		(stroke
+			(width 0.2)
+			(type default)
+		)
+		(layer "F.SilkS")
+		(uuid "7d2a3d69-a1df-415c-af8f-163fd940587a")
+	)
+	(fp_line
+		(start -6.145 4.775)
+		(end 6.145 4.775)
+		(stroke
+			(width 0.2)
+			(type default)
+		)
+		(layer "F.SilkS")
+		(uuid "b12d57bd-92c8-45de-8f9c-bac05e342df7")
+	)
+	(fp_line
+		(start -2.54 3.24)
+		(end -2.54 4.775)
+		(stroke
+			(width 0.2)
+			(type default)
+		)
+		(layer "F.SilkS")
+		(uuid "32527da1-435b-4a8d-9380-45f4a35d6bf1")
+	)
+	(fp_line
+		(start -2.54 3.24)
+		(end 2.54 3.24)
+		(stroke
+			(width 0.2)
+			(type default)
+		)
+		(layer "F.SilkS")
+		(uuid "37c89118-1e1d-470f-882c-bf5423adc1ba")
+	)
+	(fp_line
+		(start 2.54 3.24)
+		(end 2.54 4.775)
+		(stroke
+			(width 0.2)
+			(type default)
+		)
+		(layer "F.SilkS")
+		(uuid "9a26a327-f89d-4517-bc7e-016fd28374fc")
+	)
+	(fp_line
+		(start 6.145 -4.775)
+		(end 6.145 4.775)
+		(stroke
+			(width 0.2)
+			(type default)
+		)
+		(layer "F.SilkS")
+		(uuid "5bba06b0-12e5-47e1-88ea-c17e0daf01ca")
+	)
+	(fp_rect
+		(start -7 -5.5)
+		(end 7 5.5)
+		(stroke
+			(width 0.05)
+			(type default)
+		)
+		(fill none)
+		(layer "B.CrtYd")
+		(uuid "80533a24-b060-49fe-93e7-43aeec2140bc")
+	)
+	(fp_rect
+		(start -7 -5.5)
+		(end 7 5.5)
+		(stroke
+			(width 0.05)
+			(type default)
+		)
+		(fill none)
+		(layer "F.CrtYd")
+		(uuid "42f09189-1883-4bab-81d5-dade57eb3f58")
+	)
+	(fp_text user "${REFERENCE}"
+		(at 0 11.7 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(uuid "dc2fe0c0-ccc8-4197-b8ba-8bc26a1e6d36")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(pad "1" thru_hole rect
+		(at -1.27 1.27)
+		(size 1.7 1.7)
+		(drill 1)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(thermal_bridge_angle 45)
+		(uuid "a76edae1-ad4f-4b65-917d-91b64a2c3250")
+	)
+	(pad "2" thru_hole circle
+		(at -1.27 -1.27)
+		(size 1.7 1.7)
+		(drill 1)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(uuid "fd10ca2c-1acf-4877-a66b-94409d29866a")
+	)
+	(pad "3" thru_hole circle
+		(at 1.27 1.27)
+		(size 1.7 1.7)
+		(drill 1)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(uuid "8db947e6-c9fd-4205-879e-4fd78ca891c6")
+	)
+	(pad "4" thru_hole circle
+		(at 1.27 -1.27)
+		(size 1.7 1.7)
+		(drill 1)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(uuid "18f80736-dc47-4e6f-89fe-f9604be81dfb")
+	)
+)

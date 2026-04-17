@@ -1,0 +1,12 @@
+# SPDX-FileCopyrightText: AirSonar contributors
+# SPDX-License-Identifier: CC0-1.0
+
+version = 1
+
+[[annotations]]
+path = [
+  "pcb/AirSonar.pretty/*.kicad_mod",
+  "schematic/AirSonar.kicad_sym",
+]
+SPDX-FileCopyrightText = "AirSonar contributors"
+SPDX-License-Identifier = "CERN-OHL-W-2.0"
