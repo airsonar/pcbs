@@ -1,0 +1,16 @@
+# SPDX-FileCopyrightText: AirSonar contributors
+# SPDX-License-Identifier: CC0-1.0
+
+version = 1
+
+[[annotations]]
+path = [
+  "fp-lib-table",
+  "airsonar_pdm8_v1.kicad_dru",
+  "airsonar_pdm8_v1.kicad_pcb",
+  "airsonar_pdm8_v1.kicad_pro",
+  "airsonar_pdm8_v1.kicad_sch",
+  "sym-lib-table",
+]
+SPDX-FileCopyrightText = "AirSonar contributors"
+SPDX-License-Identifier = "CERN-OHL-W-2.0"

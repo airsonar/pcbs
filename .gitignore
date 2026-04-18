@@ -5,5 +5,19 @@
 site/
 __pycache__/
 
-# KiCad backup files.
+# KiCad backup and local files.
 *.bak
+*-backups/
+.history/
+*.kicad_prl
+*.lck
+\#auto_saved_files#
+fp-info-cache
+
+# Generated manufacturing files.
+*.drl
+*.gbr
+*.gbrjob
+
+# Other outputs.
+*.pdf

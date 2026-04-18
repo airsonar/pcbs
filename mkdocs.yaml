@@ -5,6 +5,8 @@ site_name: AirSonar PCBs
 
 nav:
   - Overview: index.md
+  - Microphone arrays:
+    - 8-channel PDM (v1): microphone_array/airsonar_pdm8_v1.md
 
 theme:
   name: material
@@ -35,4 +37,11 @@ theme:
         name: Switch to system preference
 
 markdown_extensions:
+  - admonition
   - footnotes
+  - pymdownx.details
+  - pymdownx.superfences
+
+hooks:
+  - docs/genzip.py
+  - docs/kipdf.py

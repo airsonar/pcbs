@@ -1,0 +1,14 @@
+# SPDX-FileCopyrightText: AirSonar contributors
+# SPDX-License-Identifier: CC0-1.0
+
+# License details for files where this information cannot be embedded.
+
+version = 1
+
+[[annotations]]
+path = [
+  "microphone_array/airsonar_pdm8_v1_bom.csv",
+]
+SPDX-FileCopyrightText = "AirSonar contributors"
+SPDX-License-Identifier = "CERN-OHL-W-2.0"
+

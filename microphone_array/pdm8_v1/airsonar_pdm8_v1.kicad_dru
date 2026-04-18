@@ -1,0 +1,67 @@
+(version 1)
+
+# The clock driver has 50 ohm output impedance at 3.3V so we aim for that with the
+# distribution traces. For commonality, we also set that for the data lines.
+# The vias are sized with the aim of them also having a 50 ohm characteristic impedance.
+# The 'through hole via with two reference planes' calculator at
+#   https://designertools.app.protoexpress.com/?appid=VIAIMPCAL
+# was used to generate the settings assuming the 4L-01 PCB stackup from multi-cb.
+# Parameters:
+#   H1 and H3: 0.14 mm
+#   H2: 1.2 mm
+#   Er_1 and Er_3: 4
+#   Er_2: 4.6
+#   Er_4: 1
+#   Via diameter: 0.2 mm
+#   Anti-pad diameter: 1.064 mm
+#   Annular pad diameter: 0.4 mm
+#   Via pad diameter: 0.4 mm
+#   Via plating thickness: 0.025 mm
+#   Annular pad thickness: 0.025 mm
+#   Reference plane thickness (T2 and T4): 0.035 mm
+
+# Note that the first matching rule is used, but the file is processed from bottom to top
+# so more specific rules need to appear at the end.
+
+
+# Fix the width of the traces. This is what multi-cb suggests for their stackup.
+(rule "50 ohm trace width"
+  (condition "A.Type == 'Track' && A.NetClass == '50 ohm'")
+  (constraint track_width (min 0.245mm) (max 0.245mm))
+)
+
+# We want a 1.064mm diameter cutout in the reference plane.
+# Via pad is 0.4mm diameter, so 0.664mm left => 0.332mm on each side.
+(rule "Via to plane clearance for 50 ohm characteristic impedance"
+  (condition "A.Type == 'Via' && B.Type == 'Zone' && A.NetClass == '50 ohm'")
+  (constraint clearance (min 0.332mm) (max 0.332mm))
+)
+
+# So we can have the vias within the bus.
+(rule "Allow reduced clearance between 50 ohm tracks and vias"
+  (condition "A.Type == 'Track' && B.Type == 'Via' && A.NetClass == '50 ohm' && (B.NetClass == '50 ohm' || B.NetName == 'BSEL')")
+  (constraint clearance (min 0.42mm))
+)
+
+# Allow a reduced clearance when connecting to components where the pins are too
+# close for our normal 3W requirement.
+(rule "Allow reduced clearances when connecting 50 ohm nets to components"
+  (condition "A.NetClass == '50 ohm' && (A.intersectsFrontCourtyard('U2') || A.intersectsBackCourtyard('MK*') || A.intersectsFrontCourtyard('JP9') || A.intersectsFrontCourtyard('JP10') || A.intersectsFrontCourtyard('JP11') || A.intersectsFrontCourtyard('JP12'))")
+  (constraint clearance (min 0.15mm) (opt 0.5mm))
+)
+
+# Some of the other rules end up with different zone clearances.
+(rule "Consistent zone-track clearance"
+  (condition "A.Type == 'Zone' && (B.Type == 'Track' || B.Type == 'Pad' || B.Type == 'Via')")
+  (constraint clearance (min 0.3mm))
+)
+
+(rule "Silkcreen to pad clearance"
+  (constraint silk_clearance (min 0.15mm))
+  (condition "A.Layer == '*.Silkscreen' && (B.Type == 'Pad' || B.Type == 'Via')")
+)
+
+(rule "Silkscreen to soldermask clearance"
+  (constraint silk_clearance (min 1mm))
+  (condition "A.Layer == '*.Silkscreen' && B.Layer == '*.Mask'")
+)
