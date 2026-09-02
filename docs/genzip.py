@@ -15,16 +15,13 @@
 # This will create a zip file with the named directories and files, and be formatted in
 # the built page as <a href="filename.zip">a zip file</a>.
 
-from pathlib import Path, PosixPath
 import re
 import shutil
-import subprocess
-from tempfile import TemporaryDirectory
 import zipfile
+from pathlib import Path, PosixPath
 
 from mkdocs.config.defaults import MkDocsConfig
 from mkdocs.plugins import event_priority
-import pypdf  # type:ignore[import-not-found]
 
 
 @event_priority(999)
@@ -94,9 +91,10 @@ def on_page_content(html: str, page, config: MkDocsConfig, files) -> str:
         # Each remaining section corresponds to one PDF export which we will then
         # combine into a single PDF. Export these to a temporary directory that will be
         # cleaned up when we are done.
-        pieces = []
         base = Path(__file__).parent.parent
-        with zipfile.ZipFile(subdir / output, "w", compression=zipfile.ZIP_DEFLATED) as f:
+        with zipfile.ZipFile(
+            subdir / output, "w", compression=zipfile.ZIP_DEFLATED
+        ) as f:
             for source in sections[1].splitlines():
                 source = source.strip()
                 if not source:

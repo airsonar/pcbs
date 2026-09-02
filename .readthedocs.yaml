@@ -1,0 +1,29 @@
+# SPDX-FileCopyrightText: AirSonar contributors
+# SPDX-License-Identifier: CC0-1.0
+#
+# Read the Docs configuration file for MkDocs projects
+# See https://docs.readthedocs.io/en/stable/config-file/v2.html for details
+
+version: 2
+
+build:
+  os: ubuntu-lts-latest
+  tools:
+    python: latest
+  jobs:
+    # Get a suitable version of kicad-cli as the version in Ubuntu's repositories may
+    # not be compatible. The mkdocs hook which performs the export will check for it in
+    # the docs/ directory.
+    pre_build:
+      - wget https://downloads.kicad.org/kicad/linux/explore/stable/download/kicad-10.0.6-x86_64-lite.AppImage.tar
+      - tar -xf kicad-10.0.6-x86_64-lite.AppImage.tar
+      - chmod +x kicad-10.0.6-x86_64-lite.AppImage
+      - ./kicad-10.0.6-x86_64-lite.AppImage --appimage-extract
+      - ln -sf "$(pwd)/squashfs-root/usr/bin/kicad-cli" docs/kicad-cli
+
+mkdocs:
+  configuration: mkdocs.yaml
+
+python:
+  install:
+    - requirements: docs/requirements.txt

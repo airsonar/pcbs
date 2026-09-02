@@ -30,15 +30,15 @@
 # requires that the `kicad-cli` executable is available on the path, and that the pypdf
 # library is installed.
 
-from pathlib import Path, PosixPath
 import re
 import shutil
 import subprocess
+from pathlib import Path, PosixPath
 from tempfile import TemporaryDirectory
 
+import pypdf  # type:ignore[import-not-found]
 from mkdocs.config.defaults import MkDocsConfig
 from mkdocs.plugins import event_priority
-import pypdf  # type:ignore[import-not-found]
 
 
 @event_priority(999)
@@ -77,6 +77,15 @@ def on_page_content(html: str, page, config: MkDocsConfig, files) -> str:
     # Find the directory containing this rendered page.
     subdir = Path(page.file.abs_dest_path).parent
     subdir.mkdir(parents=True, exist_ok=True)
+
+    # If there is a kicad-cli binary in the docs/ directory, assume it is the version to
+    # use for exporting KiCad files. This is mainly used for the Read the Docs builds,
+    # as the repository version of KiCad is typically too old.
+    local_cli = Path(__file__).parent / "kicad-cli"
+    if local_cli.exists():
+        kicad_cli = str(local_cli.resolve())
+    else:
+        kicad_cli = "kicad-cli"
 
     def generate_and_update_tag(matchobj: re.Match) -> str:
         output = ""
@@ -138,7 +147,7 @@ def on_page_content(html: str, page, config: MkDocsConfig, files) -> str:
                 # And generate this PDF.
                 fn = Path(tempd) / f"section-{i}.pdf"
                 subprocess.run(
-                    ["kicad-cli", cmd, "export", "pdf", "--output", str(fn)]
+                    [kicad_cli, cmd, "export", "pdf", "--output", str(fn)]
                     + cliargs
                     + [str(source)],
                     check=True,
