@@ -33,7 +33,7 @@ want the design files, it is recommended you clone the Git repository and access
 from there. A copy of the design files and associated libraries, templates etc as they
 were when this documentation was built can be
 ```genzip
-output: zybo_z7_i2c_breakout_v2.zip
+output: airsonar_zybo_z7_i2c_breakout_v2.zip
 link_text: downloaded as a zipfile
 %%%
 directory: libraries
@@ -49,7 +49,7 @@ if you prefer.
 
 A
 ```kipdf
-output: airsonar_pdm8_v1.pdf
+output: airsonar_zybo_z7_i2c_breakout_v2.pdf
 link_text: PDF of the schematics and PCB layout
 %%%
 source: zybo_z7/i2c_breakout_v2/zybo_z7_i2c_breakout_v2.kicad_sch

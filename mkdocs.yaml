@@ -10,6 +10,7 @@ nav:
   - Zybo Z7 support:
     - Overview: zybo_z7/overview.md
     - I2C breakout (v2): zybo_z7/zybo_z7_i2c_breakout_v2.md
+    - PDM8 mic array breakout (v1): zybo_z7/zybo_z7_pdm8_breakout_v1.md
 
 theme:
   name: material

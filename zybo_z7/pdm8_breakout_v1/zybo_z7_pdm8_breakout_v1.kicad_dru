@@ -1,0 +1,30 @@
+(version 1)
+
+# Allow a reduced clearance when connecting to components where the pins are too
+# close for our normal 3W requirement.
+(rule "Allow reduced clearances when connecting signal to components"
+  (condition "A.NetClass == 'Signal' && (A.intersectsFrontCourtyard('J*') || A.intersectsFrontCourtyard('U1'))")
+  (constraint clearance (min 0.15mm) (opt 0.5mm))
+)
+
+# So we can have the vias within the bus.
+(rule "Allow reduced clearance between signaltracks and vias"
+  (condition "A.Type == 'Track' && B.Type == 'Via' && A.NetClass == 'Signal' && B.NetClass == 'Signal'")
+  (constraint clearance (min 0.42mm))
+)
+
+(rule "Ground trace width U1"
+  (condition "A.NetName == 'GND' && A.intersectsFrontCourtyard('U1')")
+  (constraint track_width (opt 0.2mm))
+)
+
+# Some of the other rules end up with different zone clearances.
+(rule "Consistent zone-track clearance"
+  (condition "A.Type == 'Zone' && (B.Type == 'Track' || B.Type == 'Pad' || B.Type == 'Via')")
+  (constraint clearance (min 0.3mm))
+)
+
+(rule "Ignore silkscreen clipping for Zybo headers"
+  (condition "A.Layer == 'Edge.Cuts' && B.Name == 'JB1'")
+  (constraint silk_clearance (min -1mm))
+)
