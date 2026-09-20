@@ -1,0 +1,4 @@
+(fp_lib_table
+  (version 7)
+  (lib (name "AirSonar")(type "KiCad")(uri "${KIPRJMOD}/../../libraries/pcb/AirSonar.pretty")(options "")(descr ""))
+)

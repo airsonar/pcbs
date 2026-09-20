@@ -7,6 +7,9 @@ nav:
   - Overview: index.md
   - Microphone arrays:
     - 8-channel PDM (v1): microphone_array/airsonar_pdm8_v1.md
+  - Zybo Z7 support:
+    - Overview: zybo_z7/overview.md
+    - I2C breakout (v2): zybo_z7/zybo_z7_i2c_breakout_v2.md
 
 theme:
   name: material
